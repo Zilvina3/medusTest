@@ -25,6 +25,10 @@ function Layout({ children }) {
             name: 'Renginiai',
             to: '/renginiai'
         },
+        {
+            name: 'Atsiliepimai',
+            to: '/atsiliepimai'
+        },
  
     ]
 

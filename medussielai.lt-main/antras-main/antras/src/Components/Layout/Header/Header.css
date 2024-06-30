@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); */
 
 
 header {
     background-image: url('qq.jpg');
-    font-family: 'Lato', sans-serif;
+    /* font-family: 'Lato', sans-serif; */
     font-size: 17px;
 }
 
-#logo {
+/* #logo {
     font-family: "Sofia", sans-serif;
-}
+} */
 
 .curlink {
     color: black;
@@ -31,13 +31,13 @@ header {
     display: none;
 }
 
-a {
+/* a {
     font-family: 'Lato', sans-serif;
-}
+} */
 
-#nav-links {
+/* #nav-links {
     font-family: 'Lato', sans-serif;
-}
+} */
 
 @media (max-width: 1100px) {
     .hamburger{

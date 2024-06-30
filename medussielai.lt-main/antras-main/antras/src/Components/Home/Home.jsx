@@ -17,8 +17,8 @@ function Home() {
     <main>
       <div className='main h-screen pb-34'>
         <section className='container  pl-32 pt-20 animate-fade-right animate-once animate-ease-in lg:pl-24 max-sm:pl-8'>
-          <h1 className=' 2xl:text-9xl angel text-orange-300 pt-10 pb-8 xl:text-8xl lg:text-7xl md:text-6xl sm:text-5xl max-sm:text-5xl'>Neringa Sala</h1>
-          <p className='text-4xl angel text-orange-300 sm:text-3xl'>Kaip atrasti savo kelią?</p>
+          <h1 className='vard 2xl:text-9xl angel text-orange-300 pt-10 pb-8 xl:text-8xl lg:text-7xl md:text-6xl sm:text-5xl max-sm:text-5xl'>Neringa Sala</h1>
+          <p className='par text-4xl angel text-orange-300 sm:text-3xl'>Kaip atrasti savo kelią?</p>
           <div className='py-10'><button className=" bg-orange-300 font-bold hover:bg-orange-500 text-gray-800
           py-4 px-12   rounded-xl shadow-md hover:trasition hover:-translate-y-1 duration-300 delay-100"
             onClick={() => { navigate('/susisiekti') }}>
