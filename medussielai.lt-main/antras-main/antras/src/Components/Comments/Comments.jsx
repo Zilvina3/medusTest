@@ -17,17 +17,35 @@ export default function Comments() {
     
 
     useEffect(() => {
-        async function logMovies() {
-            const response = await fetch("http://91.108.122.115:8080/atsiliepimai");
-            const comments = await response.json();
-            setAtsiliepimai(comments)
-            if(comments.length == 0){
-                setAtsiliepimuNera('Atsiliepimų nėra . . .')
-            }
-          }
-            logMovies();          
-    }, [])
+        // async function logMovies() {
+        //     const response = await fetch("http://91.108.122.115:8080/atsiliepimai",{
+        //         method: "GET",
+        //         headers:{
+        //             'Accept': 'application/json',
+        //             'Content-Type': 'application/json'
+        //         }
+        //     }
+        //     );
+        //     const comments = await response.json();
+        //     setAtsiliepimai(comments)
+        //     if(comments.length == 0){
+        //         setAtsiliepimuNera('Atsiliepimų nėra . . .')
+        //     }
+        //   }
+        //     logMovies();          
 
+            fetch('https://atsiliepimai.medussielai.lt/atsiliepimai', {
+                
+                method: "GET",
+                headers:{
+                    Accept: 'application/json',
+                }
+            })
+   .then( response => response.json() )
+   .then( data => setAtsiliepimai(data) )
+   .catch( err => console.log(err))
+
+    }, [])
 
   return (
     <main className=" bg-black font-serif secondBg text-white">
@@ -38,7 +56,7 @@ export default function Comments() {
              onSubmit={(e) => {
                 e.preventDefault();
 
-                fetch('http://91.108.122.115:8080/prideti', {
+                fetch('https://atsiliepimai.medussielai.lt/prideti', {
                     method: "POST",
                     headers: {
                         'Accept': 'application/json',
@@ -56,13 +74,11 @@ export default function Comments() {
                 setVardas('')
                 setKomentaras('')
                 
-
                 setTimeout(function() {
                     
                     location.reload()
                   }, 2000);
 
-                  setTimeout()
             }}>
 
                 <div className='text-center border-2 border-orange-300 max-sm:w-full max-md:p-5 max-sm:border-0  p-12 '>
@@ -118,7 +134,9 @@ export default function Comments() {
                                         <div className='comment py-2 text'>{atsil.komentaras}</div>
                                     </div>
                                 )
-                            }) : <div className='text-center  text-3xl my-12 p-5 border-2 border-gray-600 rounded-md'>{atsiliepimuNera}</div>  }
+                            }) : <div className='text-center  text-3xl my-12 p-5 border-2 border-gray-600 rounded-md'>
+                                Atsiliepimu nera
+                            </div>  }
                     </div>
                 </section>
 
