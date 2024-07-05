@@ -16,24 +16,7 @@ export default function Comments() {
       }, [])
     
 
-    useEffect(() => {
-        // async function logMovies() {
-        //     const response = await fetch("http://91.108.122.115:8080/atsiliepimai",{
-        //         method: "GET",
-        //         headers:{
-        //             'Accept': 'application/json',
-        //             'Content-Type': 'application/json'
-        //         }
-        //     }
-        //     );
-        //     const comments = await response.json();
-        //     setAtsiliepimai(comments)
-        //     if(comments.length == 0){
-        //         setAtsiliepimuNera('Atsiliepimų nėra . . .')
-        //     }
-        //   }
-        //     logMovies();          
-
+    useEffect(() => {   
             fetch('https://atsiliepimai.medussielai.lt/atsiliepimai', {
                 
                 method: "GET",
