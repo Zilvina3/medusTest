@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 import './Comments.css';
+import axios from 'axios';
 
 export default function Comments() {
 
@@ -17,7 +18,7 @@ export default function Comments() {
     
 
     useEffect(() => {   
-            fetch('https://atsiliepimai.medussielai.lt/atsiliepimai', {
+            fetch('https://www.medussielai.lt/server.php', {
                 
                 method: "GET",
                 headers:{
@@ -39,26 +40,17 @@ export default function Comments() {
              onSubmit={(e) => {
                 e.preventDefault();
 
-                fetch('https://atsiliepimai.medussielai.lt/prideti', {
-                    method: "POST",
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        vardas: vardas,
-                        atsiliepimas: komentaras
-                    })
-                }).then(res => res.json())
-                .then(res => setMessage('Išsiųsta'))
-            
+
+                axios.post('https://www.medussielai.lt/server.php', { vardas, komentaras });
+
+                
                 e.target.vardas.value = '';
                 e.target.komentaras.value = '';
                 setVardas('')
                 setKomentaras('')
-                
-                setTimeout(function() {
-                    
+                setMessage('Išsiųsta. . .')
+
+                setTimeout(function() {                   
                     location.reload()
                   }, 2000);
 
@@ -110,15 +102,15 @@ export default function Comments() {
 
         <section className='atsiliepimai_main flex justify-center'>
                     <div className='box-border atsiliepimaiWrap p-7 w-4/5 max-sm:w-full'>
-                            {atsiliepimai ? atsiliepimai.map((atsil, num) =>{
+                            {atsiliepimai ? atsiliepimai.reviews.map((atsil, num) =>{
                                 return(
                                     <div className='commentBox p-5 border-gray-600 border-4 rounded-md my-8 text-justify ' key={num}>
                                         <h3 className='text-xl text-orange-300'>{atsil.vardas}</h3>
                                         <div className='comment py-2 text'>{atsil.komentaras}</div>
                                     </div>
                                 )
-                            }) : <div className='text-center  text-3xl my-12 p-5 border-2 border-gray-600 rounded-md'>
-                                Atsiliepimu nera
+                            }) : <div className='text-center  text-3xl my-12 p-5 '>
+                                
                             </div>  }
                     </div>
                 </section>
