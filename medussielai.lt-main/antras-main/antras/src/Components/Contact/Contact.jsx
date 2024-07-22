@@ -12,7 +12,7 @@ function Contact() {
 
     return (
         <main className=' bg-black py-32 max-h'>
-            <h1 className='text-8xl angel text-orange-300 text-center p-8'>Susisiekti</h1>
+            <h1 className='text-8xl angel text-orange-300 text-center p-8 max-sm:text-6xl'>Susisiekti</h1>
             <section className='container mx-auto flex justify-center'>
                 <ContactUs />
                 

@@ -36,23 +36,23 @@ const [response, setResponse] = useState('')
             <section className='container mx-auto flex justify-center'>
                 
             
-    <form className='flex flex-col w-2/5 m-7 max-lg:w-3/5 max-sm:w-full max-sm:my-20' ref={form} onSubmit={sendEmail}>
-    <div className='flex flex-col m-3'>
+    <form className='flex justify-center flex-wrap w-2/5 m-7 max-lg:w-3/5 max-sm:w-full max-sm:my-20' ref={form} onSubmit={sendEmail}>
+    <div className='flex flex-col m-3 mx-7'>
         <label className='w-32 text-2xl my-2 text-orange-300' htmlFor='fname' >Vardas</label>
         <input required className='w-64 rounded-md p-2 bg-slate-600 outline-orange-300' type="text" id="fname" name="firstname" placeholder="Jūsų vardas . ." />
     </div>
 
-    <div className='flex flex-col m-3'>
+    <div className='flex flex-col m-3 mx-8'>
         <label className='w-32 text-2xl my-2 text-orange-300'>Paštas</label>
         <input required className='w-64 rounded-md p-2 bg-slate-600' type="email" id="email" name="email" placeholder="Pavadinimas@paštas.lt . ." />
     </div>
 
-    <div className='flex flex-col m-3'>
+    <div className='flex flex-col m-3 mx-9'>
         <label className='w-34 text-2xl my-2 text-orange-300'>Telefonas <span className='text-sm text-orange-300'>(neprivalomas)</span></label>
         <input  className='w-64 rounded-md p-2 bg-slate-600' type="text" id="tel" name="tel" placeholder="Telefono numeris +370 ..." />
     </div>
 
-    <div className='flex flex-col m-3 '>
+    <div className='flex flex-col m-3 mx-16'>
         <label className='w-32 text-2xl my-2 text-orange-300 '>Renginiai</label>
         <select className="w-64 rounded-md p-3 bg-slate-600" name="renginiai" id="renginiai">
             <option value="Lugnasadas">Lugnasadas</option>
@@ -68,7 +68,7 @@ const [response, setResponse] = useState('')
     </div>
 
 
-    <div className='m-3 mt-8'>
+    <div className='m-3 mt-8 mx-9 text-center'>
         <button type="submit" className='
           rounded-xl py-3 px-10 bg-orange-300 font-bold text-black
          hover:bg-orange-400' >Registruotis</button>
